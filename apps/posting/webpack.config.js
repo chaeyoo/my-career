@@ -40,6 +40,7 @@ module.exports = (_, argv) => ({
   },
 
   plugins: [
+    new Dotenv(),
     new ModuleFederationPlugin({
       name: "posting",
       filename: "remoteEntry.js",
