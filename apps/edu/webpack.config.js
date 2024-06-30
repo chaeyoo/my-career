@@ -4,7 +4,7 @@ const Dotenv = require('dotenv-webpack');
 const deps = require("./package.json").dependencies;
 module.exports = (_, argv) => ({
   output: {
-    publicPath: "http://localhost:3000/",
+    publicPath: "http://localhost:3002/",
   },
 
   resolve: {
@@ -12,7 +12,7 @@ module.exports = (_, argv) => ({
   },
 
   devServer: {
-    port: 3000,
+    port: 3002,
     historyApiFallback: true,
   },
 
@@ -44,13 +44,12 @@ module.exports = (_, argv) => ({
       path: "../../.env",
     }),
     new ModuleFederationPlugin({
-      name: "shell",
+      name: "edu",
       filename: "remoteEntry.js",
-      remotes: {
-        posting: "posting@http://localhost:3001/remoteEntry.js",
-        edu: "edu@http://localhost:3002/remoteEntry.js",
+      remotes: {},
+      exposes: {
+        "./injector": "./src/injector.tsx",
       },
-      exposes: {},
       shared: {
         ...deps,
         react: {
