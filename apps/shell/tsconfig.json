@@ -12,7 +12,8 @@
 		"module": "esnext", // Specify module code generation
 		"paths": {
 			"posting/injector": ["../posting/src/injector.tsx"],
-			"edu/injector": ["../edu/src/injector.tsx"]
+			"edu/injector": ["../edu/src/injector.tsx"],
+			"network/injector": ["../network/src/injector.tsx"]
 		},
 		"moduleResolution": "node", // Resolve modules using Node.js style
 		"isolatedModules": true, // Unconditionally emit imports for unresolved files

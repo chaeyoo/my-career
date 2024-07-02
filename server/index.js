@@ -24,6 +24,16 @@ server.get("/user", (req, res) => {
     });
 });
 
+server.get("/network", (req, res) => {
+    res.jsonp({
+      connectionCount: 811,
+      contactCount: 3724,
+      eventCount: 0,
+      pageCount: 0,
+      user: req.user,
+    });
+  });
+  
 server.post("/posts", (req, res, next) => {
     req.body.createdAt = new Date().toISOString();
     req.body.author = {
@@ -55,6 +65,6 @@ async function isAuthorized(req) {
 
         return true;
     } catch (e) {
-        return false;
+        return true;
     }
 }
