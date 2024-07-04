@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
+import { type ConnectionType } from "../types";
 import * as css from "./connections.css";
-import { ConnectionType } from "../type";
 import Connection from "./connection";
 
 interface ConnectionsProps {

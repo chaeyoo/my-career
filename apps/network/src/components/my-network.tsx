@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import * as css from "./my-network.css";
-import { MyNetworkType } from "../type";
+import { type MyNetworkType } from "../types";
 
 interface MyNetworkProps {
 	myNetwork: MyNetworkType | null;

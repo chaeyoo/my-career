@@ -1,7 +1,7 @@
 import { ConnectionType, MyNetworkType } from "./type";
 
 export async function getMyNetwork(token: string): Promise<MyNetworkType> {
-	const res = await fetch("http://localhost:4000/network", {
+	const res = await fetch("http://localhost:4000/my-network", {
 		headers: {
 			Authorization: `Bearer ${token}`,
 		},
