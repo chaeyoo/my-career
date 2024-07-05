@@ -1,5 +1,4 @@
 import React from "react";
-import * as css from "./connection.css";
 import { Button } from "@my-career/ui-kit";
 import IconDefault from "../assets/icon-default";
 
@@ -17,14 +16,16 @@ const Connection: React.FC<ConnectionProps> = ({
 	networkCount,
 }) => {
 	return (
-		<div className={css.wrapper}>
+		<div className="network--flex network--flex-col network--bg-white network--p-4 network--rounded-lg network--gap-4 network--border-solid network--border network--border-slate-700 network--items-center hover:network-border-blue-600 hover:network--cursor-pointer">
 			<div>
 				{picture === null && <IconDefault />}
-				{picture !== null && <img className={css.picture} src={picture} />}
+				{picture !== null && <img className="network--w-12" src={picture} />}
 			</div>
-			<div className={css.name}>{name}</div>
-			<div className={css.role}>{role}</div>
-			<div className={css.networkCount}>공통 1촌 {networkCount}명</div>
+			<div className="network--text-base network--font-bold">{name}</div>
+			<div className="network--text-xs network--text-gray-600">{role}</div>
+			<div className="network--text-xs network--text-gray-600">
+				공통 1촌 {networkCount}명
+			</div>
 			<div>
 				<Button>1촌 맺기</Button>
 			</div>

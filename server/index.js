@@ -24,7 +24,7 @@ server.get("/user", (req, res) => {
     });
 });
 
-server.get("/network", (req, res) => {
+server.get("/my-network", (req, res) => {
     res.jsonp({
       connectionCount: 811,
       contactCount: 3724,
