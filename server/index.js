@@ -26,14 +26,14 @@ server.get("/user", (req, res) => {
 
 server.get("/my-network", (req, res) => {
     res.jsonp({
-      connectionCount: 811,
-      contactCount: 3724,
-      eventCount: 0,
-      pageCount: 0,
-      user: req.user,
+        connectionCount: 811,
+        contactCount: 3724,
+        eventCount: 0,
+        pageCount: 0,
+        user: req.user,
     });
-  });
-  
+});
+
 server.post("/posts", (req, res, next) => {
     req.body.createdAt = new Date().toISOString();
     req.body.author = {
@@ -42,6 +42,14 @@ server.post("/posts", (req, res, next) => {
         picture: req.user.picture,
     };
     next();
+});
+
+server.get("/apply-status", (req, res) => {
+    res.jsonp({
+        myJobsCount: 13,
+        myOnlineClassesCount: 11,
+        mySavedUpdatesCount: 1,
+    });
 });
 
 server.use(router);
@@ -65,6 +73,6 @@ async function isAuthorized(req) {
 
         return true;
     } catch (e) {
-        return true;
+        return false;
     }
 }
