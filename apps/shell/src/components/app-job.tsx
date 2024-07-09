@@ -1,14 +1,14 @@
 import React, { useEffect, useRef } from "react";
-import inject from "edu/injector";
+import inject from "job/injector";
 import { useLocation } from "react-router-dom";
 import { useShellEvent } from "@my-career/shell-router";
-import { appEduBasename } from "../contants/prefix";
+import { appJobBasename } from "../contants/prefix";
 
 export default function AppEdu() {
 	const wrapperRef = useRef<HTMLDivElement>(null);
 	const location = useLocation();
 
-	useShellEvent("app-edu", appEduBasename);
+	useShellEvent("app-job", appJobBasename);
 
 	const isFirstRunRef = useRef(true);
 	const unmountRef = useRef(() => {});
@@ -20,7 +20,7 @@ export default function AppEdu() {
 		unmountRef.current = inject({
 			routerType: "memory",
 			rootElement: wrapperRef.current!,
-			basePath: location.pathname.replace(appEduBasename, ""),
+			basePath: location.pathname.replace(appJobBasename, ""),
 		});
 		isFirstRunRef.current = false;
 	}, [location]);
