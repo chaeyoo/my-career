@@ -13,7 +13,8 @@
 		"paths": {
 			"posting/injector": ["../posting/src/injector.tsx"],
 			"edu/injector": ["../edu/src/injector.tsx"],
-			"network/injector": ["../network/src/injector.tsx"]
+			"network/injector": ["../network/src/injector.tsx"],
+			"job/injector": ["../job/src/injector.tsx"]
 		},
 		"moduleResolution": "node", // Resolve modules using Node.js style
 		"isolatedModules": true, // Unconditionally emit imports for unresolved files
